@@ -164,6 +164,8 @@ ol {
 .content__card-link {
   color: #fff;
   text-decoration: none;
+  display: block;
+  cursor: pointer;
 }
 
 .content__video-card-title {
@@ -205,6 +207,7 @@ ol {
   align-items: center;
   gap: 5px;
   width: fit-content;
+  cursor: pointer; /* Курсор-указатель на кликабельных элементах. */
 }
 
 /* Стилизация текстового поля. */
@@ -217,7 +220,7 @@ ol {
   outline: none;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
-  font-size: 18px; 
+  font-size: 18px;
   background-color: transparent;
   appearance: none;
 }
@@ -302,11 +305,6 @@ ol {
   padding: 0 3px;
 }
 
-.content__card-link {
-  display: block;
-  cursor: pointer;
-}
-
 /* Текущая выбранная карточка. */
 .content__card-link_current {
   background-color: rgb(255 255 255 / 0.2);
@@ -328,9 +326,4 @@ ol {
 
 .content__card-link:focus-visible {
   outline: 1px solid #fff;
-}
-
-/* Курсор-указатель на кликабельных элементах. */
-.search-form__label {
-  cursor: pointer;
 }
