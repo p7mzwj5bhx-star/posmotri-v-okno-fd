@@ -77,11 +77,13 @@ ol {
   align-items: flex-start;
   gap: 55px;
   padding-bottom: 15px;
+  padding-left: 25px;
 }
 
 .content__list-container {
   position: relative;
   height: 298px;
+  width: 450px;
   overflow-y: auto;  /* Вертикальный скролл при переполнении */
 }
 
@@ -91,7 +93,7 @@ ol {
   flex-grow: 1; /* Вся доступная ширина */
   justify-content: flex-end;
   gap: 26px;
-  margin-bottom: 100px;
+  margin-bottom: 111px;
   padding-right: 50px;
 }
 
