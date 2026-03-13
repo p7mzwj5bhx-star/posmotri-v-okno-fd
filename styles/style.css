@@ -75,15 +75,14 @@ ol {
   display: flex;
   justify-content: space-between;  /* Пропорционально распределяем пространство */
   align-items: flex-start;
-  gap: 55px;
+  gap: 65px;
   padding-bottom: 15px;
-  padding-left: 25px;
 }
 
 .content__list-container {
   position: relative;
-  height: 298px;
   width: 450px;
+  height: 298px;
   overflow-y: auto;  /* Вертикальный скролл при переполнении */
 }
 
@@ -109,7 +108,7 @@ ol {
   position: relative;
   width: 760px;
   height: 390px;
-  padding: 20px;
+  padding-bottom: 20px;
 }
 
 /* Видео занимает всю ширину и высоту контейнера, не выходя за его пределы. */
@@ -164,9 +163,9 @@ ol {
 }
 
 .content__card-link {
+  display: block;
   color: #fff;
   text-decoration: none;
-  display: block;
   cursor: pointer;
 }
 
