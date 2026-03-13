@@ -69,6 +69,7 @@ ol {
   gap: 30px;
   width: 1140px;
   object-fit: cover;
+  margin-top: 100px;
 }
 
 .search-form {
@@ -81,7 +82,7 @@ ol {
 
 .content__list-container {
   position: relative;
-  width: 450px;
+  width: auto;
   height: 298px;
   overflow-y: auto;  /* Вертикальный скролл при переполнении */
 }
@@ -101,7 +102,7 @@ ol {
   flex-direction: column;
   align-items: flex-start;
   padding-bottom: 5px;
-  padding-left: 50px;
+  padding-left: 100px;
 }
 
 .result__video-container {
