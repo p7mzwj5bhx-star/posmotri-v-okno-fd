@@ -1,0 +1,344 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  block-size: 100%;
+}
+
+.page {
+  display: flex;
+  inline-size: 1200px;
+  block-size: 100%;
+  margin: auto;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  background-color: #1b1919;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Кастомный скроллбар */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgb(217 217 217 / 10%);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #D9D9D9;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  object-fit: cover;
+  width: 1140px;
+  gap: 30px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;  /* Пропорционально распределяем пространство */
+  align-items: flex-start;
+  gap: 55px;
+  padding-bottom: 15px;
+}
+
+.content__list-container {
+  height: 298px;
+  overflow-y: auto;  /* Вертикальный скролл при переполнении */
+}
+
+.content__details {
+  display: flex;
+  flex-grow: 1; /* Вся доступная ширина */
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 26px; 
+  margin-bottom: 100px;
+  padding-right: 50px;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 5px;
+  padding-left: 50px;
+}
+
+.result__video-container {
+  width: 760px;
+  height: 390px;
+  padding: 20px;
+}
+
+/* Видео занимает всю ширину и высоту контейнера, не выходя за его пределы. */
+.result__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Элементы внутри карточки — в одну строку, прижаты к верху. */
+.content__video-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.content__video-card-thumbnail {
+  height: 103px;
+  min-width: 194px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Описание занимает всё пространство, не занятое картинкой. */
+.content__video-card-description-container {
+  flex-grow: 1;
+}
+
+.search-form__fieldset-title {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+/* Оформление главного заголовка и акцентного слова. */
+.title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 0.94;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__card-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.content__video-card-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.content__video-card-description {
+  font-size: 18px;
+  line-height: 0.9;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+/* Убираем border. */
+.search-form__fieldset {
+  border: none;
+}
+
+/* Стилизация обёртки для инпута и чекбоксов. */
+.search-form__label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+  gap: 5px;
+}
+
+/* Стилизация текстового поля. */
+.search-form__textfield {
+  appearance: none;
+  width: 225px;
+  height: 27px;
+  border: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff; 
+  background-color: transparent;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  outline: none;
+}
+
+.search-form__textfield::placeholder {
+  color: rgb(255 255 255 / 0.7);
+}
+
+/* Обводка появляется на лейбле, когда инпут внутри получает :focus-visible. */
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+}
+
+.search-form__pseudo-checkbox {
+  display: block;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
+  padding: 1px;
+}
+
+/* ::after — скрытый белый квадрат внутри псевдочекбокса. */
+.search-form__pseudo-checkbox::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  opacity: 1;
+}
+
+.search-form__label:has(.search-form__checkbox):hover .search-form__label-text {
+  text-decoration: underline;
+}
+
+/* Общие стили для обеих кнопок. */
+.button {
+  border: 1px solid #fff;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* Состояния — hover, active, focus. */
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  color: rgb(255 255 255 / 0.6);
+}
+
+.button:focus {
+  outline: none; /* сбрасываем стандартную обводку */
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+}
+
+/* Кнопка «Найти»: размер и выравнивание по низу контейнера. */
+.search-form__submit-button {
+  width: 194px;
+  height: 34px;
+  align-self: flex-end;
+}
+
+/* Кнопка «Показать ещё»: растягивается на всю ширину контейнера. */
+.more-button {
+  width: 100%;
+  height: 34px;
+}
+
+.content__list-item {
+  padding: 0 3px;
+}
+
+.content__card-link {
+  display: block;
+}
+
+/* Текущая выбранная карточка. */
+.content__card-link_current {
+  background-color: rgb(255 255 255 / 0.2);
+}
+
+/* Активное состояние — удержание кнопки мыши. */
+.content__card-link:active {
+  background-color: rgb(255 255 255 / 0.2);
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+}
+
+/* Сброс стандартной обводки при focus. */
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+}
+
+/* Курсор-указатель на кликабельных элементах. */
+.search-form__label {
+  cursor: pointer;
+}
+
+.content__card-link {
+  cursor: pointer;
+}
+
+/* Относительное позиционирование для размещения прелоадеров. */
+.result__video-container,
+.content__list-container {
+  position: relative;
+}
+
