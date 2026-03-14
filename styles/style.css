@@ -68,7 +68,6 @@ ol {
   align-content: center;
   gap: 30px;
   width: 1140px;
-  object-fit: cover;
   margin-top: 100px;
 }
 
@@ -76,14 +75,15 @@ ol {
   display: flex;
   justify-content: space-between;  /* Пропорционально распределяем пространство */
   align-items: flex-start;
-  gap: 65px;
-  padding-bottom: 15px;
+  gap: 40px;
+  /* padding-bottom: 16px; */
 }
 
 .content__list-container {
   position: relative;
   width: auto;
   height: 298px;
+  overflow: auto;
   overflow-y: auto;  /* Вертикальный скролл при переполнении */
 }
 
@@ -93,8 +93,7 @@ ol {
   flex-grow: 1; /* Вся доступная ширина */
   justify-content: flex-end;
   gap: 26px;
-  margin-bottom: 111px;
-  padding-right: 50px;
+  margin-bottom: 100px;
 }
 
 .result {
@@ -102,14 +101,14 @@ ol {
   flex-direction: column;
   align-items: flex-start;
   padding-bottom: 5px;
-  padding-left: 100px;
+  /* padding-left: 100px; */
 }
 
 .result__video-container {
   position: relative;
-  width: 760px;
-  height: 390px;
-  padding-bottom: 20px;
+  width: 711px;
+  height: 386px;
+  padding-bottom: 16px;
 }
 
 /* Видео занимает всю ширину и высоту контейнера, не выходя за его пределы. */
@@ -122,7 +121,7 @@ ol {
 .content__list {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 30px;
 }
 
 /* Элементы внутри карточки — в одну строку, прижаты к верху */
@@ -142,6 +141,9 @@ ol {
 /* Описание занимает всё пространство, не занятое картинкой. */
 .content__video-card-description-container {
   flex-grow: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .search-form__fieldset-title {
@@ -183,6 +185,8 @@ ol {
 
 .content__video-card-description {
   display: -webkit-box;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   overflow: hidden;
   font-size: 18px;
   line-height: 0.9;
@@ -264,6 +268,7 @@ ol {
 
 /* Общие стили для обеих кнопок. */
 .button {
+  height: 34px;
   border: 1px solid #fff;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -294,17 +299,20 @@ ol {
 .search-form__submit-button {
   align-self: flex-end;
   width: 194px;
-  height: 34px;
 }
 
 /* Кнопка «Показать ещё»: растягивается на всю ширину контейнера. */
 .more-button {
   width: 100%;
-  height: 34px;
 }
 
 .content__list-item {
   padding: 0 3px;
+}
+
+/* Добавляет отступ между кнопкой и списком */
+.content__list + .more-button {
+  margin-top: 30px;
 }
 
 /* Текущая выбранная карточка. */
