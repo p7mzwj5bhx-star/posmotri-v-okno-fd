@@ -84,7 +84,6 @@ ol {
   width: auto;
   height: 298px;
   overflow: auto;
-  overflow-y: auto;  /* Вертикальный скролл при переполнении */
 }
 
 .content__details {
@@ -93,22 +92,20 @@ ol {
   flex-grow: 1; /* Вся доступная ширина */
   justify-content: flex-end;
   gap: 26px;
-  margin-bottom: 100px;
+  margin-bottom: 79px;
 }
 
 .result {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-bottom: 5px;
-  /* padding-left: 100px; */
 }
 
 .result__video-container {
   position: relative;
   width: 711px;
   height: 386px;
-  padding-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 /* Видео занимает всю ширину и высоту контейнера, не выходя за его пределы. */
